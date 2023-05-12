@@ -4,10 +4,10 @@
 <section class="container">
     <div class="add-todo-box">
         <h2 class="title is-5">New Todo</h2>
-        <form>
+        <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
             <div class="field is-grouped">
                 <div class="control is-expanded">
-                    <input type="text" class="input" placeholder="type todo text here ..." name="" id="">
+                    <input type="text" #todoTextField="ngModel" minlength="3" class="input" placeholder="type todo text here ..." name="todoInput" required ngModel id="">
                 </div>
                 <div class="control">
                     <button class="button alt-gradient-button">
@@ -16,17 +16,31 @@
                     </button>
                 </div>
             </div>
+            <!-- <div *ngIf="todoTextField.invalid && showvalidationErrors">
+                <p class="help is-danger" *ngIf="todoTextField.errors.required">
+                    *  Please enter the text of your todo
+                  </p>
+                  <p class="help is-danger" *ngIf="todoTextField.errors.minlength">
+                    *  todo text must be at least 3 characters
+                  </p>
+            </div> -->
+            <p class="help is-danger" *ngIf="todoTextField.invalid">
+              *  Please enter the text of your todo
+            </p>
+            <p class="help is-danger" *ngIf="todoTextField.invalid">
+              *  todo text must be at least 3 characters
+            </p>
         </form>
     </div>
 
     <div class="todos-list">
 
-        <div class="todo-item completed">
+        <div class="todo-item " *ngFor="let todo of todos" [class.completed] = "todo.completed" > 
             <div class="check-box">
                 <i class="material-icons">check</i>
             </div>
             <div class="todo-text">
-                Build an Angular App
+                {{todo.text}}
             </div>
             <div class="todo-controls-box">
                 <button class="todo-control-button">
@@ -38,60 +52,6 @@
             </div>
         </div>
 
-        <div class="todo-item">
-            <div class="check-box">
-                <i class="material-icons">check</i>
-            </div>
-            <div class="todo-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae cum velit vel.
-            </div>
-              <div class="todo-controls-box">
-                <button class="todo-control-button">
-                    <i class="material-icons">edit</i>
-                </button>
-                <button class="todo-control-button">
-                    <i class="material-icons">delete</i>
-                </button>
-            </div>
-        </div>
-
-        <div class="todo-item">
-            <div class="check-box">
-                <i class="material-icons">check</i>
-            </div>
-            <div class="todo-text">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum consequuntur maxime sed, aut illum
-                libero odio, possimus, temporibus ea quos eius porro dolor? Officiis, eius.
-            </div>
-              <div class="todo-controls-box">
-                <button class="todo-control-button">
-                    <i class="material-icons">edit</i>
-                </button>
-                <button class="todo-control-button">
-                    <i class="material-icons">delete</i>
-                </button>
-            </div>
-        </div>
-
-        <div class="todo-item">
-            <div class="check-box">
-                <i class="material-icons">check</i>
-            </div>
-            <div class="todo-text">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum consequuntur maxime sed, aut illum
-                libero odio, possimus, temporibus ea quos eius porro dolor? Officiis, eius.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum consequuntur maxime sed, aut illum
-                libero odio, possimus, temporibus ea quos eius porro dolor? Officiis, eius.
-            </div>
-              <div class="todo-controls-box">
-                <button class="todo-control-button">
-                    <i class="material-icons">edit</i>
-                </button>
-                <button class="todo-control-button">
-                    <i class="material-icons">delete</i>
-                </button>
-            </div>
-        </div>
 
     </div>
 </section>
