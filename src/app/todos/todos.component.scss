@@ -1,158 +1,32 @@
-header {
-    width: 100%;
-    height: 250px;
+.heading-section {
     background: linear-gradient(to right, rgb(2, 228, 171), rgb(74, 215, 240));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    h1 {
-        color: #fff;
-        font-weight: 700;
-        text-shadow: 0px 1px 2px rgba(black, 0.17);
+
+    padding: 100px;
+    padding-bottom: 150px;
+
+    h1.title {
+        font-weight: bold;
+        color: white;
+        text-shadow: 0px 1px 2px rgba(black, 0.12);
     }
 }
 
-.alt-gradient-button {
-    border: none;
-    outline: none;
-    background-image: linear-gradient(to right, rgb(236, 72, 140), rgb(240, 54, 82));
-    font-weight: 600;
-    color: #fff;
-    opacity: 0.85;
-    transition: all .4s ease-in-out .3s;;
-
-    &:hover,&:active,&:focus {
-        border: none;
-        outline: none;
-        color: #fff;
-        opacity: 1;
-        background-image: linear-gradient(to right,  rgb(240, 54, 82),rgb(236, 72, 140));
-        box-shadow: 0 3px 8px #dddddd !important;
-
-    }
-    i{
-        margin-right:10px;
-    }
-}
 .container {
     max-width: 800px;
-    .add-todo-box {
-        padding: 25px;
-        background-color: #fff;
-        position: relative;
-        top: -70px;
-        border-radius: 4px;
-        box-shadow: 0 4px 12px #3636365d;
-
-    }
-    .todos-list {
-        transition: all .4s ease-in-out .3s;;
-        .todo-item {
-            display: flex;
-            align-items: center;
-            transition: all .4s ease-in-out .3s;;
-            font-size: 1.1rem;
-            cursor: pointer;
-            padding:0px 15px 45px 0;
-            margin-bottom:30px;
-            border-bottom: 1px solid #f2f3f5;
-            position:relative;
-            .todo-controls-box{
-                position: absolute;
-                right:0;
-                bottom: 0;
-                display: flex;
-                opacity: 0;
-                visibility: hidden;
-                transition: all .4s ease-in-out .3s;;
-                .todo-control-button{
-                    border: none;
-                    outline: none;
-                    cursor: pointer;
-                    padding: 8px 14px;
-                    transition: all .4s ease-in-out .3s;;
-                    background-color: #eee;
-                    transform: translateY(15px);
-
-                 
-                    i.material-icons{
-                        font-size: 1rem;
-                    }
-                    &:hover{
-                        background-color: #bbbbbb;
-                    }
-                    &:focus,&:active{
-                        background-color: #aaa;
-
-                    }
-                    &:first-of-type{
-                        border-top-left-radius: 9px;
-
-                    }
-                    &:last-of-type{
-                        border-top-right-radius: 9px;
-
-                    }
-                }
-            }
-            &:hover {
-                border-bottom: 1px solid #ddd;
-                transition: all .4s ease-in-out .3s;;
-                .todo-controls-box{
-                    opacity: 1;
-                    visibility: visible;
-                transform: translateY(-15px);
-
-                }
-
-            }
-            .todo-text{
-                text-align: justify;
-            }
-            .check-box {
-                border: 2px solid #eee;
-                border-radius: 50em;
-                width: 30px;
-                height: 30px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-right: 10px;
-                transition: all .4s ease-in-out .3s;;
-                flex-shrink: 0;
-                i {
-                    font-size: 1.1rem;
-                    margin: auto;
-                    transition: all .4s ease-in-out .3s;;
-                    opacity: 0;
-                }
-            }
-
-
-
-            &.completed{
-                color:#ccc;
-                border-bottom:1px solid rgb(152, 255, 152);
-                .check-box{
-                    background-color:rgb(2, 211, 2);
-                    border-color: rgb(2, 211, 2);
-                    i{
-                       color:#fff;
-                       opacity: 1;
-                     }
-                 }
-            }
-
-          
-
-        }
-    }
 }
 
-.todos-list .todo-item:hover .check-box {
-    transition: all .4s ease-in-out .3s;;
-    background-color: #eee;
-    i.material-icons {
-        opacity: .3;
-    }
+.add-todo-box-container {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.add-todo-box {
+    padding: 25px;
+    background: white;
+    
+    border-radius: 4px;
+    margin-top: -68px;
+
+    box-shadow: 0 4px 12px rgba(black, 0.08);
 }
