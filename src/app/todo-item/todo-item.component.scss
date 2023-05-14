@@ -174,13 +174,20 @@
     }
 }
 
-.todo-item.completed .check-box {
-    background: rgb(11, 223, 170);
-    border-color: rgb(11, 223, 170);
-
+.todo-item.completed{
+    .todo-text{
+        text-decoration: line-through !important;
+    }
+    
+    .check-box {
+    background: rgb(56 255 95);
+    border-color:rgb(56 255 95);
+    
     i.material-icons {
         opacity: 1;
+        color:#fff;
     }
+}
 }
 
 .todo-item .todo-controls-box {
@@ -243,5 +250,5 @@
 }
 
 .todo-controls-box .todo-control-button.is-danger:active i.material-icons {
-    color: rgb(189, 37, 37);
+    color: rgb(226, 37, 37);
 }

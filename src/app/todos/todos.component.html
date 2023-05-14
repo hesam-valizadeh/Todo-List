@@ -10,7 +10,7 @@
   
         <div class="field is-grouped" style="margin: 0">
           <p class="control is-expanded">
-            <input ngModel #todoTextField="ngModel" required minlength="2" name="todoInput" class="input" type="text" placeholder="Type todo text here ...">
+            <input ngModel #todoTextField="ngModel" required minlength="4" name="todoInput" class="input" type="text" placeholder="Type todo text here ...">
           </p>
           <p class="control">
             <button type="submit" class="button alt-gradient-button">
@@ -21,7 +21,7 @@
         </div>
   
           <p class="help is-danger" *ngIf="todoTextField.invalid">Please enter the text of your todo</p>
-          <p class="help is-danger" *ngIf="todoTextField.invalid">Todo text must be at least 2 characters</p>
+          <p class="help is-danger" *ngIf="todoTextField.invalid">Todo text must be at least 4 characters</p>
       </form>
   
     </div>
@@ -36,6 +36,8 @@
           *ngFor="let todo of todos"
           [todo]="todo"
           (todoClicked)="toggleCompleted(todo)"
+          (editClicked)="editTodo(todo)"
+          (deleteClicked)="deleteTodo(todo)"
         ></app-todo-item>
   
       </div>
