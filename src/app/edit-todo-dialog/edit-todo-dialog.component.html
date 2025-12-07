@@ -1,39 +1,43 @@
 <h1 class="title">
-    Edit Todo 
+  Edit Todo
 </h1>
 
 <div mat-dialog-content>
-    <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
-        <div class="field">
-            <div class="control">
-                <input 
-                 type="text"
-                 minlength="4" 
-                 required 
-                 [ngModel]="todo.text" 
-                 name="text" 
-                 #todoTextField = "ngModel"
-                 placeholder="Type Todo text here ..." 
-                 class="input">
-            </div>
-            <p class="help is-danger"  *ngIf="todoTextField.invalid" >Please enter the text of your todo</p>
-            <p class="help is-danger"  *ngIf="todoTextField.invalid">Todo text must be at least 4 characters</p>
+  <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+    <div class="field">
+      <div class="control">
+        <input
+          type="text"
+          minlength="4"
+          required
+          [ngModel]="todo.text"
+          name="text"
+          #todoTextField = "ngModel"
+          placeholder="Type Todo text here ..."
+          class="input">
         </div>
+        @if (todoTextField.invalid) {
+          <p class="help is-danger"  >Please enter the text of your todo</p>
+        }
+        @if (todoTextField.invalid) {
+          <p class="help is-danger" >Todo text must be at least 4 characters</p>
+        }
+      </div>
 
-        <br>
+      <br>
 
         <div class="field is-grouped is-grouped-right">
-            <div class="control">
-                <button type="button" class="button is-light" (click)="close()">
-                    Cancel
-                </button>
-            </div>
-            <div class="control">
-                <button type="submit" class="button alt-gradient-button" >
-                    <i class="material-icons">save</i>
-                    Save
-                </button>
-            </div>
+          <div class="control">
+            <button type="button" class="button is-light" (click)="close()">
+              Cancel
+            </button>
+          </div>
+          <div class="control">
+            <button type="submit" class="button alt-gradient-button" >
+              <i class="material-icons">save</i>
+              Save
+            </button>
+          </div>
         </div>
-    </form>
-</div>
+      </form>
+    </div>
