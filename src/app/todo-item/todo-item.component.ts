@@ -1,9 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { Todo } from '../shared/todo.model';
 @Component({
-  selector: 'app-todo-item',
-  templateUrl: './todo-item.component.html',
-  styleUrls: ['./todo-item.component.scss']
+    selector: 'app-todo-item',
+    templateUrl: './todo-item.component.html',
+    styleUrls: ['./todo-item.component.scss'],
+    standalone: false
 })
 export class TodoItemComponent implements OnInit {
 
