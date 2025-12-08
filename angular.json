@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Todo-List": {
+    "To-Do": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -18,7 +18,7 @@
           "builder": "@angular/build:application",
           "options": {
             "outputPath": {
-              "base": "dist/todo-list"
+              "base": "dist/To-Do"
             },
             "index": "src/index.html",
             "polyfills": [
@@ -66,10 +66,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Todo-List:build:production"
+              "buildTarget": "To-Do:build:production"
             },
             "development": {
-              "buildTarget": "Todo-List:build:development"
+              "buildTarget": "To-Do:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +77,7 @@
         "extract-i18n": {
           "builder": "@angular/build:extract-i18n",
           "options": {
-            "buildTarget": "Todo-List:build"
+            "buildTarget": "To-Do:build"
           }
         },
         "test": {
