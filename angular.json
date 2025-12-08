@@ -17,9 +17,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": {
-              "base": "dist/To-Do"
-            },
+           "outputPath": "dist/To-Do",
             "index": "src/index.html",
             "polyfills": [
               "zone.js"
