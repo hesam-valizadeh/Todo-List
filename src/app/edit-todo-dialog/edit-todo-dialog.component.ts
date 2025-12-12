@@ -3,12 +3,13 @@ import { NgForm, FormsModule } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialogContent } from '@angular/material/dialog';
 import { Todo } from '../shared/todo.model';
 import { CdkScrollable } from '@angular/cdk/scrolling';
+import {Toolbar, ToolbarWidget, ToolbarWidgetGroup} from '@angular/aria/toolbar';
 
 @Component({
     selector: 'app-edit-todo-dialog',
     templateUrl: './edit-todo-dialog.component.html',
     styleUrls: ['./edit-todo-dialog.component.scss'],
-    imports: [CdkScrollable, MatDialogContent, FormsModule],
+    imports: [CdkScrollable, MatDialogContent, FormsModule,Toolbar, ToolbarWidget, ToolbarWidgetGroup],
     standalone:true
 })
 export class EditTodoDialogComponent {

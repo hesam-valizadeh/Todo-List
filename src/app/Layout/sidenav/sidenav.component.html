@@ -1,0 +1,26 @@
+@if (isOpen) {
+  <div class="sidenav-overlay" (click)="close()"></div>
+}
+<aside class="sidenav" [class.is-open]="isOpen">
+  <div class="sidenav-header">
+    <h2 class="title is-5">Menu</h2>
+    <button class="button is-ghost" (click)="close()">
+      <i class="material-icons">close</i>
+    </button>
+  </div>
+  <nav class="sidenav-content">
+    <a class="sidenav-item" href="#">
+      <i class="material-icons">home</i>
+      <span>Home</span>
+    </a>
+    <a class="sidenav-item" href="#">
+      <i class="material-icons">list</i>
+      <span>My Todos</span>
+    </a>
+    <a class="sidenav-item" href="#">
+      <i class="material-icons">settings</i>
+      <span>Settings</span>
+    </a>
+  </nav>
+</aside>
+

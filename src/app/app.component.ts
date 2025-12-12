@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './Layout/header/header.component';
+import { SidenavComponent } from './Layout/sidenav/sidenav.component';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +14,8 @@ import { RouterOutlet } from '@angular/router';
     FormsModule,
     MatDialogModule,
     RouterOutlet,
+    HeaderComponent,
+    SidenavComponent
   ],
 })
 export class AppComponent {

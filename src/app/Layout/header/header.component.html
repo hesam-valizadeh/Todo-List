@@ -1,0 +1,72 @@
+<div class="header-container">
+  <!-- Top Blue Header -->
+  <header class="top-header">
+    <div class="top-header-left">
+      <button class="app-launcher-button" aria-label="App launcher">
+        <i class="material-icons">apps</i>
+      </button>
+      <span class="app-title">To Do</span>
+    </div>
+    <div class="top-header-center">
+      <div class="search-container">
+        <i class="material-icons search-icon">search</i>
+        <input type="text" class="search-input" placeholder="Search">
+      </div>
+    </div>
+    <div class="top-header-right">
+      <button class="icon-button" aria-label="Settings">
+        <i class="material-icons">settings</i>
+      </button>
+      <button class="icon-button" aria-label="Help">
+        <i class="material-icons">help_outline</i>
+      </button>
+      <button class="icon-button" aria-label="Feedback">
+        <i class="material-icons">chat_bubble_outline</i>
+      </button>
+      <div class="avatar">HV</div>
+    </div>
+  </header>
+
+  <!-- Secondary White Header -->
+  <header class="secondary-header">
+    <div class="secondary-header-left">
+      <button class="menu-button" (click)="toggleSidenav()" aria-label="Toggle menu">
+        <i class="material-icons">menu</i>
+      </button>
+      <div class="header-title-section">
+        <div class="title-row">
+          <h1 class="header-title">My Day</h1>
+          <button class="more-button" aria-label="More options">
+            <i class="material-icons">more_vert</i>
+          </button>
+        </div>
+        <p class="header-date">{{ currentDate }}</p>
+      </div>
+      <div class="view-toggle">
+        <button class="view-button" [class.active]="currentView === 'grid'" (click)="setView('grid')">
+          <i class="material-icons">grid_view</i>
+          <span>Grid</span>
+        </button>
+        <button class="view-button" [class.active]="currentView === 'list'" (click)="setView('list')">
+          <i class="material-icons">view_list</i>
+          <span>List</span>
+        </button>
+      </div>
+    </div>
+    <div class="secondary-header-right">
+      <button class="action-button">
+        <i class="material-icons">swap_vert</i>
+        <span>Sort</span>
+      </button>
+      <button class="action-button">
+        <i class="material-icons">apps</i>
+        <span>Group</span>
+      </button>
+      <button class="action-button">
+        <i class="material-icons">lightbulb_outline</i>
+        <span>Suggestions</span>
+      </button>
+    </div>
+  </header>
+</div>
+

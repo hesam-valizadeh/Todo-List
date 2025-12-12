@@ -1,23 +1,25 @@
-<section class="heading-section">
-  <h1 class="title is-1 has-text-centered">Todos</h1>
-</section>
-
-<div class="container add-todo-box-container">
+<div class="container-fluid add-todo-box-container">
   <div class="add-todo-box">
-
     <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
-      <h2 class="title is-5">New Todo</h2>
-
-      <div class="field is-grouped" style="margin: 0">
-        <p class="control is-expanded">
-          <input ngModel #todoTextField="ngModel" required minlength="4" name="todoInput" class="input" type="text" placeholder="Type todo text here ...">
-        </p>
-        <p class="control">
-          <button type="submit" class="button alt-gradient-button">
-            <i class="material-icons">add</i>
+      <div class="task-input-wrapper">
+        <div class="task-input-container">
+          <div class="radio-button-placeholder"></div>
+          <input ngModel #todoTextField="ngModel" required minlength="4" name="todoInput" class="task-input" type="text" placeholder="Add a task">
+          <div class="task-input-actions">
+            <button type="button" class="icon-action-button" aria-label="Calendar">
+              <i class="material-icons">calendar_today</i>
+            </button>
+            <button type="button" class="icon-action-button" aria-label="Reminder">
+              <i class="material-icons">notifications_none</i>
+            </button>
+            <button type="button" class="icon-action-button" aria-label="Repeat">
+              <i class="material-icons">repeat</i>
+            </button>
+          </div>
+          <button type="submit" class="add-button">
             Add
           </button>
-        </p>
+        </div>
       </div>
 
       @if (todoTextField.invalid) {
@@ -31,11 +33,9 @@
   </div>
 </div>
 
-<section class="section">
+<section>
   <div class="container">
-
     <div class="todos-list">
-
       @for (todo of todos; track todo) {
         <app-todo-item
           [todo]="todo"
@@ -46,6 +46,5 @@
       }
 
     </div>
-
   </div>
 </section>
